@@ -15,10 +15,12 @@ INSERT INTO Products (ProductID, SellerID, Name, Category, Price, StockQuantity)
 -- Sample Data for Orders
 INSERT INTO Orders (OrderID, CustomerID, TotalAmount, Status) VALUES (1, 1, 15.98, 'Pending');
 INSERT INTO Orders (OrderID, CustomerID, TotalAmount, Status) VALUES (2, 2, 6.98, 'Delivered');
+INSERT INTO Orders (OrderID, CustomerID, TotalAmount, Status) VALUES (3, 2, 5.78, 'Delivered');
 
 -- Sample Data for OrderDetails
 INSERT INTO OrderDetails (OrderDetailID, OrderID, ProductID, SellerID, Quantity, Subtotal) VALUES (1, 1, 1, 1, 2, 11.98);
 INSERT INTO OrderDetails (OrderDetailID, OrderID, ProductID, SellerID, Quantity, Subtotal) VALUES (2, 2, 2, 2, 2, 6.98);
+INSERT INTO OrderDetails (OrderDetailID, OrderID, ProductID, SellerID, Quantity, Subtotal) VALUES (3, 3, 2, 2, 2, 5.78);
 
 -- Sample Data for Payments
 INSERT INTO Payments (PaymentID, OrderID, PaymentMethod, PaymentStatus) VALUES (1, 1, 'Card', 'Pending');
