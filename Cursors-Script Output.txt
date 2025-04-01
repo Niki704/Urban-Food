@@ -1,0 +1,66 @@
+
+Procedure GETHIGHDEMANDPRODUCTS compiled
+
+
+PL/SQL procedure successfully completed.
+
+
+PL/SQL procedure successfully completed.
+
+
+Procedure PROCESSPENDINGDELIVERIES compiled
+
+
+PL/SQL procedure successfully completed.
+
+BEGIN ProcessPendingDeliveries; END;
+*
+ERROR at line 1:
+ORA-02290: check constraint (NIKI.SYS_C007517) violated
+ORA-06512: at "NIKI.PROCESSPENDINGDELIVERIES", line 12
+ORA-06512: at line 1
+
+https://docs.oracle.com/error-help/db/ora-02290/
+
+
+More Details :
+https://docs.oracle.com/error-help/db/ora-02290/
+https://docs.oracle.com/error-help/db/ora-06512/
+
+Procedure PROCESSPENDINGDELIVERIES compiled
+
+BEGIN ProcessPendingDeliveries; END;
+*
+ERROR at line 1:
+ORA-02290: check constraint (NIKI.SYS_C007517) violated
+ORA-06512: at "NIKI.PROCESSPENDINGDELIVERIES", line 12
+ORA-06512: at line 1
+
+https://docs.oracle.com/error-help/db/ora-02290/
+
+
+More Details :
+https://docs.oracle.com/error-help/db/ora-02290/
+https://docs.oracle.com/error-help/db/ora-06512/
+
+Procedure PROCESSPENDINGDELIVERIES compiled
+
+BEGIN ProcessPendingDeliveries; END;
+*
+ERROR at line 1:
+ORA-02290: check constraint (NIKI.SYS_C007517) violated
+ORA-06512: at "NIKI.PROCESSPENDINGDELIVERIES", line 12
+ORA-06512: at line 1
+
+https://docs.oracle.com/error-help/db/ora-02290/
+
+
+More Details :
+https://docs.oracle.com/error-help/db/ora-02290/
+https://docs.oracle.com/error-help/db/ora-06512/
+
+Procedure PROCESSPENDINGDELIVERIES compiled
+
+
+PL/SQL procedure successfully completed.
+
