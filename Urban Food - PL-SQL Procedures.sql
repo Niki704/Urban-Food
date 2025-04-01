@@ -29,6 +29,22 @@ END;
 /
 -- Note: WHERE Clause checks ProductID and allows only if there is sufficiant stock available.
 
+-- Delete a customer and their orders 
+CREATE OR REPLACE PROCEDURE DeleteCustomer(
+    p_CustomerID IN NUMBER
+) AS
+BEGIN
+    DELETE FROM OrderDetails WHERE OrderID IN (SELECT OrderID FROM Orders WHERE CustomerID = p_CustomerID);
+
+    DELETE FROM Orders WHERE CustomerID = p_CustomerID;
+
+    DELETE FROM Customers WHERE CustomerID = p_CustomerID;
+
+    COMMIT;
+END;
+/
+-- Note: In order to delete a customer you should remove all other referencing table rows in other tables. In this case, it's required to delete data from child table (OrderDetails), parent table (Orders) and then from the customer table. otherwise you'll get constraints error.
+
 -- Calculate total sales for a seller
 CREATE OR REPLACE FUNCTION GetTotalSales(
     p_SellerID IN NUMBER
@@ -74,6 +90,12 @@ END;
 -----------------------------------------------------------------------------------------------------------------
 BEGIN
     ReduceStock(1, 2);
+END;
+/
+
+-----------------------------------------------------------------------------------------------------------------
+BEGIN
+    DeleteCustomer(4);
 END;
 /
 
