@@ -38,7 +38,7 @@ BEGIN
     SELECT COALESCE(SUM(OD.Subtotal), 0)
     INTO v_TotalSales
     FROM OrderDetails OD
-    JOIN Seller S ON OD.SellerID = S.SellerID
+    JOIN Sellers S ON OD.SellerID = S.SellerID
     WHERE S.SellerID = p_SellerID;
 
     RETURN v_TotalSales;
@@ -62,9 +62,9 @@ BEGIN
     END IF;
 END;
 /
+-- Note: This procedure triggers on the OrderDetails table. It doesn't need to call. it automatically triggers when the stock quantity is lower than the requesting quantity.
 
-
-
+-- Test Procedures
 -----------------------------------------------------------------------------------------------------------------
 BEGIN
     UpdateOrderStatus(1, 'Shipped');
@@ -73,10 +73,13 @@ END;
 
 -----------------------------------------------------------------------------------------------------------------
 BEGIN
-    ReduceStock(5, 2);
+    ReduceStock(1, 2);
 END;
 /
 
 -----------------------------------------------------------------------------------------------------------------
 SELECT GetTotalSales(2) FROM dual;
 
+-----------------------------------------------------------------------------------------------------------------
+INSERT INTO OrderDetails (OrderDetailID, OrderID, ProductID, SellerID, Quantity, Subtotal) 
+VALUES (3, 3, 2, 2, 50, 13.81);
