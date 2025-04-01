@@ -1,0 +1,52 @@
+
+Procedure UPDATEORDERSTATUS compiled
+
+
+Procedure REDUCESTOCK compiled
+
+
+Function GETTOTALSALES compiled
+
+LINE/COL  ERROR
+--------- -------------------------------------------------------------
+6/5       PL/SQL: SQL Statement ignored
+9/10      PL/SQL: ORA-00942: table or view does not exist
+Errors: check compiler log
+
+Trigger CHECKSTOCKBEFOREORDER compiled
+
+
+Function GETTOTALSALES compiled
+
+
+PL/SQL procedure successfully completed.
+
+
+PL/SQL procedure successfully completed.
+
+
+Error starting at line : 84 in command -
+INSERT INTO OrderDetails (OrderDetailID, OrderID, ProductID, SellerID, Quantity, Subtotal) 
+VALUES (101, 1, 5, 2, 1000, 5000)
+Error at Command Line : 84 Column : 13
+Error report -
+SQL Error: null
+
+More Details :
+
+
+Error starting at line : 84 in command -
+INSERT INTO OrderDetails (OrderDetailID, OrderID, ProductID, SellerID, Quantity, Subtotal) 
+VALUES (3, 3, 2, 2, 50, 13.81)
+Error at Command Line : 84 Column : 13
+Error report -
+SQL Error: ORA-20001: Not enough stock available for this product.
+ORA-06512: at "NIKI.CHECKSTOCKBEFOREORDER", line 9
+ORA-04088: error during execution of trigger 'NIKI.CHECKSTOCKBEFOREORDER'
+
+https://docs.oracle.com/error-help/db/ora-20001/
+
+More Details :
+https://docs.oracle.com/error-help/db/ora-20001/
+https://docs.oracle.com/error-help/db/ora-06512/
+https://docs.oracle.com/error-help/db/ora-04088/
