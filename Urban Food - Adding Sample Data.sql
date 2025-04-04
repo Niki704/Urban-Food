@@ -29,6 +29,7 @@ INSERT INTO Payments (PaymentID, OrderID, PaymentMethod, PaymentStatus) VALUES (
 -- Sample Data for Deliveries
 INSERT INTO Deliveries (DeliveryID, OrderID, DeliveryStatus, EstimatedDeliveryDate) VALUES (1, 1, 'Out for Delivery', TO_DATE('2025-04-01', 'YYYY-MM-DD'));
 INSERT INTO Deliveries (DeliveryID, OrderID, DeliveryStatus, EstimatedDeliveryDate) VALUES (2, 2, 'Delivered', TO_DATE('2025-03-28', 'YYYY-MM-DD'));
+INSERT INTO Deliveries (DeliveryID, OrderID, DeliveryStatus, EstimatedDeliveryDate) VALUES (3, 3, 'Pending', TO_DATE('2025-04-12', 'YYYY-MM-DD'));
 
 -- Check inserted data
 
